@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Form } from "./Form";
+import { Button } from "@chakra-ui/react";
 
 
 export const TodoList = () => {
@@ -43,8 +44,8 @@ export const TodoList = () => {
         {tareas.map((tarea, id) => (
           <li key={id}>
             {tarea.texto}
-            <button onClick={() => editarTarea(tarea.id)}>Editar</button>
-            <button onClick={() => eliminarTarea(tarea.id)}>Eliminar</button>
+            <Button  size="xs" colorScheme="teal" onClick={() => editarTarea(tarea.id)}>Editar</Button>
+            <Button  size="xs" colorScheme="red" onClick={() => eliminarTarea(tarea.id)}>Eliminar</Button>
 
           </li>
 

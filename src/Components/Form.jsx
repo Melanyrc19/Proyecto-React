@@ -1,4 +1,6 @@
+
 import { useState } from "react";
+import { Box, Input, Button } from "@chakra-ui/react";
 
 export const Form = ({ onAgregarTarea }) => {
 
@@ -14,14 +16,23 @@ export const Form = ({ onAgregarTarea }) => {
   };
 
   return (
-    <form onSubmit={agregarTarea}>
-      <input
+    
+    <Box  as="form"
+      onSubmit={agregarTarea}
+      display="flex"
+      gap={2}
+      p={4}
+      bg="gray.100"
+      borderRadius="md"
+      boxShadow="md">
+      <Input
         type="text"
         placeholder="Ingrese nueva tarea"
         value={tarea}
         onChange={(e) => setTarea(e.target.value)}
+        
       />
-      <button type="submit">Agregar tarea</button>
-    </form>
+      <Button colorScheme="teal" type="submit">Agregar tarea</Button>
+    </Box>
   );
 };

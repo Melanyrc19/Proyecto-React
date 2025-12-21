@@ -15,10 +15,7 @@ function App() {
           ¡Lista de tares! 🎉
         </Heading>
    
-
-       
        <TodoList />
-
      
       <VStack spacing={4}></VStack>
    </Box>
