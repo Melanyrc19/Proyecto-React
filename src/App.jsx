@@ -1,7 +1,7 @@
 import { Box, Heading, Text, Button, VStack } from "@chakra-ui/react";
 import { useState } from 'react'
 import { TodoList } from './Components/TodoList'
-import { Filtro, Todo } from "./Components/Filtro";
+import { Filtro } from "./Components/Filtro";
 
 function App() {
    const [tareas, setTareas] = useState([]);
