@@ -16,23 +16,22 @@ export const Form = ({ onAgregarTarea }) => {
   };
 
   return (
-    
-    <Box  as="form"
+    <Box
+      as="form"
       onSubmit={agregarTarea}
       display="flex"
       gap={2}
-      p={4}
-      bg="gray.100"
-      borderRadius="md"
-      boxShadow="md">
+      mb={4}
+      w="100%"        
+      maxW="600px"  >
       <Input
         type="text"
         placeholder="Ingrese nueva tarea"
         value={tarea}
         onChange={(e) => setTarea(e.target.value)}
-        
-      />
-      <Button colorScheme="teal" type="submit">Agregar tarea</Button>
+     flex="1" 
+     />
+      <Button flex={1} colorScheme="teal" type="submit">Agregar tarea</Button>
     </Box>
   );
 };
