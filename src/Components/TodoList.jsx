@@ -1,6 +1,5 @@
 
-import { Form } from "./Form";
-import { Button, Box } from "@chakra-ui/react";
+import { Button, Box, VStack, HStack, Text } from "@chakra-ui/react";
 
 
 export const TodoList = ({
@@ -14,21 +13,19 @@ export const TodoList = ({
 
   return (
     <Box >
-     <Form flex="1" onAgregarTarea={onAgregarTarea} />
-
-        
-      <ul>
+    
+      <VStack>
         {tareas.map((tarea, id) => (
-          <li key={id}>
-            {tarea.texto}
+          <HStack key={id}>
+            <Text>{tarea.texto}</Text>
             <Button  size="xs" colorScheme="blue" onClick={() => onEditarTarea(tarea.id)}>Editar</Button>
             <Button  size="xs" colorScheme="red" onClick={() => onEliminarTarea(tarea.id)}>Eliminar</Button>
             <Button  size="xs" colorScheme="green" onClick={() => onToggleCompletada(tarea.id)}>Hecho</Button>
 
-          </li>
+          </HStack>
 
         ))}
-      </ul>
+      </VStack>
 
     </Box>
   )
