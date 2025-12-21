@@ -17,6 +17,22 @@ export const TodoList = () => {
   const eliminarTarea = (id) => {
     setTareas(tareas.filter(t=>t.id !==id))
   };
+  const editarTarea = (id) => {
+    const tarea = tareas.find(t => t.id ===id)
+
+    const nuevoTexto = prompt("Editar tarea:", tarea.texto);
+
+    if(nuevoTexto !==null && nuevoTexto.trim() !==""){
+      setTareas(
+        tareas.map(t =>
+          t.id ===id ? {...t, texto:nuevoTexto} : t
+        )
+      )
+    }
+
+
+
+  }
 
 
 
@@ -27,7 +43,7 @@ export const TodoList = () => {
         {tareas.map((tarea, id) => (
           <li key={id}>
             {tarea.texto}
-            <button>Editar</button>
+            <button onClick={() => editarTarea(tarea.id)}>Editar</button>
             <button onClick={() => eliminarTarea(tarea.id)}>Eliminar</button>
 
           </li>
