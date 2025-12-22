@@ -58,6 +58,7 @@ function App() {
         flexDirection="column"
         alignItems="center"
         bg="gray.400"
+        fontFamily="mono"
       >
         <Heading color="black" mb={6}>
           <Text>Lista de tareas</Text>
@@ -73,7 +74,9 @@ function App() {
         display="flex"
         flexDirection="column"
         alignItems="center"
+        justifyItems="center"
         bg="gray.200"
+        fontFamily="mono"
       >
         <TodoList
           tareas={tareasFiltradas}

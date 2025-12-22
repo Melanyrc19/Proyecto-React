@@ -25,7 +25,7 @@ export const Form = ({ onAgregarTarea }) => {
       w="100%"        
       maxW="600px"  >
       <Input
-        type="text"
+        type="text" bg={"white"} color={"black"}
         placeholder="Ingrese nueva tarea"
         value={tarea}
         onChange={(e) => setTarea(e.target.value)}

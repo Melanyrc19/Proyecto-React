@@ -16,7 +16,6 @@ export const Filtro = ({ filtro, setFiltro }) => {
         <option value="completadas">Completadas</option>
         <option value="pendientes">Pendientes</option>
       </select>
-
     </Box>
   )
 }
