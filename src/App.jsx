@@ -3,6 +3,7 @@ import { useState } from "react";
 import { TodoList } from "./Components/TodoList";
 import { Filtro } from "./Components/Filtro";
 import { Form } from "./Components/Form";
+import { CardEditar } from "./Components/CardEditar";
 
 function App() {
   const [tareas, setTareas] = useState([]);
@@ -85,6 +86,7 @@ function App() {
           onEliminarTarea={eliminarTarea}
           onAgregarTarea={agregarTareas}
         />
+        <CardEditar />
       </Box>
     </div>
   );
