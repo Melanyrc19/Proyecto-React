@@ -16,14 +16,13 @@ export const TodoList = ({
     <Box>
     
       <VStack>
-        <Text fontSize="xl" p={4}>Mis tareas:</Text>
+        <Text fontSize="xl" pt={4}>Mis tareas:</Text>
         {tareas.map((tarea, id) => (
-          <HStack shadow="md" bg="gray.100" rounded="md" m={1}  p={3} key={id}>
-            <Text fontFamily="mono"  bg="white" p={1}  minW="150px"  rounded="md" color="black">{tarea.texto}</Text>
-            <Button leftIcon={<EditIcon />} size="xs" colorScheme="blue" onClick={() => onEditarTarea(tarea.id)}>Editar</Button>
-            <Button leftIcon={<DeleteIcon />} size="xs" colorScheme="red" onClick={() => onEliminarTarea(tarea.id)}>Eliminar</Button>
-            <Button leftIcon={<CheckIcon />} size="xs" colorScheme="green" onClick={() => onToggleCompletada(tarea.id)}>Hecho</Button>
-
+          <HStack shadow="md" wrap="wrap"  bg="gray.100" rounded="md" m={1}  p={["2", "2", "4"]} key={id}>
+            <Text fontFamily="mono"  bg="white" p={1}  minW={[280, 200, 250]}  rounded="md" color="black">{tarea.texto}</Text>
+            <Button leftIcon={<EditIcon />}  p={["1", "1", "1"]} size={["xs", "xl", "xl"]} colorScheme="blue" onClick={() => onEditarTarea(tarea.id)}>Editar</Button>
+            <Button leftIcon={<DeleteIcon />} p={["1", "1", "1"]} size={["xs", "xs", "xl"]} colorScheme="red" onClick={() => onEliminarTarea(tarea.id)}>Eliminar</Button>
+            <Button leftIcon={<CheckIcon />} p={["1", "1", "1"]} size={["xs", "xs", "xl"]} colorScheme="green" onClick={() => onToggleCompletada(tarea.id)}>Hecho</Button>
           </HStack>
 
         ))}

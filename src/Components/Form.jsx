@@ -31,7 +31,7 @@ export const Form = ({ onAgregarTarea }) => {
         onChange={(e) => setTarea(e.target.value)}
      flex="1" 
      />
-      <Button flex={1} colorScheme="teal" type="submit">Agregar tarea</Button>
+      <Button minW="" flex={1} colorScheme="teal" type="submit">Agregar tarea</Button>
     </Box>
   );
 };

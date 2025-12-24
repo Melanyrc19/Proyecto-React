@@ -7,6 +7,8 @@ import { CardEditar } from "./Components/CardEditar";
 
 function App() {
   const [tareas, setTareas] = useState([]);
+  const [mostrarEditar, setMostrarEditar] = useState(false);
+  const [tareaEditar, setTareaEditar] = useState(null);
   const [filtro, setFiltro] = useState("Todas");
 
   const tareasFiltradas = tareas.filter((tarea) => {
@@ -50,6 +52,20 @@ function App() {
     }
   };
 
+  const abrirEditor = (id) => {
+    const tarea = tareas.find((t) => t.id === id);
+    setMostrarEditar(true);
+    setTareaEditar(tarea);
+  };
+
+  const guardarCambios = (id, nuevoTexto) => {
+    setTareas(
+      tareas.map((t) => (t.id === id ? { ...t, texto: nuevoTexto } : t))
+    );
+    setMostrarEditar(false);
+    setTareaEditar(null);
+  };
+
   return (
     <div>
       <Box
@@ -82,11 +98,11 @@ function App() {
         <TodoList
           tareas={tareasFiltradas}
           onToggleCompletada={toggleCompletada}
-          onEditarTarea={editarTarea}
+          onEditarTarea={abrirEditor}
           onEliminarTarea={eliminarTarea}
           onAgregarTarea={agregarTareas}
         />
-        <CardEditar />
+       
       </Box>
     </div>
   );
