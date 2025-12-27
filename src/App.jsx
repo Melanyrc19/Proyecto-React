@@ -32,6 +32,7 @@ function App() {
   });
 
   const agregarTareas = (texto) => {
+    
     if (!texto.trim()) return;
     const nuevaTarea = {
       id: Date.now(),
@@ -39,7 +40,7 @@ function App() {
       completada: false,
     };
     setTareas([...tareas, nuevaTarea]);
-    setMensajeError("");
+   
   };
 
   const toggleCompletada = (id) => {
