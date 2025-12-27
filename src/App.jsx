@@ -11,8 +11,6 @@ function App() {
   const [filtro, setFiltro] = useState("Todas");
   const [abierta, setAbierta] = useState(false);
   const [tareaSeleccionada, setTareaSeleccionada] = useState(null);
-  const [mensajeError, setMensajeError] = useState("");
-
 
 
   const tareasFiltradas = tareas.filter((tarea) => {
@@ -26,12 +24,7 @@ function App() {
   });
 
   const agregarTareas = (texto) => {
-    if (!texto.trim()) {
-      setMensajeError("El texto de la tarea no puede estar vacío.");
-      return;
-    }
-
-
+    if (!texto.trim()) return;
     const nuevaTarea = {
       id: Date.now(),
       texto: texto,
