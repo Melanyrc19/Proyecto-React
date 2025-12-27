@@ -1,17 +1,27 @@
 import { Text, Box, Input, Button } from "@chakra-ui/react";
 import { useState } from "react";
-export const CardEditar = () => {
-
+import { useEffect } from "react";
+export const CardEditar = (props) => {
+  const { abierta, onCerrar, tarea, onGuardar } = props;
   const [texto, setTexto] = useState("");
 
-  const guardarCambios = () => {
+  const guardarCambios = (e) => {
     e.preventDefault();
+    if (!abierta || !tarea) return null;
     if (texto.trim() === "") return;
     onGuardar(tarea.id, texto);
+    onCerrar();
 
   }
+useEffect(() => {
+    if (tarea) {
+      setTexto(tarea.texto);
+    }
+  }, [tarea]);
   
+  if (!abierta) return null;
   return (
+    
     <Box as="form"
     onSubmit={guardarCambios}
       position="fixed"
@@ -48,10 +58,10 @@ export const CardEditar = () => {
 
       
         <Box m={4} display="flex" gap={2}>
-          <Button colorScheme="teal" flex={1} type="submit">
+          <Button type="submit" colorScheme="teal" flex={1}>
             Guardar cambios
           </Button>
-          <Button bg={"gray.300"} flex={1} onClick={() => setTexto("")}>
+          <Button bg={"gray.300"} flex={1} onClick={onCerrar} >
             Cancelar
           </Button>
         </Box>

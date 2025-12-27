@@ -7,9 +7,9 @@ import { CardEditar } from "./Components/CardEditar";
 
 function App() {
   const [tareas, setTareas] = useState([]);
-  const [mostrarEditar, setMostrarEditar] = useState(false);
-  const [tareaEditar, setTareaEditar] = useState(null);
   const [filtro, setFiltro] = useState("Todas");
+  const [abierta, setAbierta] = useState(false);
+  const [tareaSeleccionada, setTareaSeleccionada] = useState(null);
 
   const tareasFiltradas = tareas.filter((tarea) => {
     if (filtro === "completadas") {
@@ -39,31 +39,18 @@ function App() {
   const eliminarTarea = (id) => {
     setTareas(tareas.filter((t) => t.id !== id));
   };
-
-  const editarTarea = (id) => {
-    const tarea = tareas.find((t) => t.id === id);
-
-    const nuevoTexto = prompt("Editar tarea:", tarea.texto);
-
-    if (nuevoTexto !== null && nuevoTexto.trim() !== "") {
-      setTareas(
-        tareas.map((t) => (t.id === id ? { ...t, texto: nuevoTexto } : t))
-      );
-    }
-  };
-
   const abrirEditor = (id) => {
     const tarea = tareas.find((t) => t.id === id);
-    setMostrarEditar(true);
-    setTareaEditar(tarea);
+    setTareaSeleccionada(tarea);
+    setAbierta(true);
   };
 
   const guardarCambios = (id, nuevoTexto) => {
     setTareas(
       tareas.map((t) => (t.id === id ? { ...t, texto: nuevoTexto } : t))
     );
-    setMostrarEditar(false);
-    setTareaEditar(null);
+    setAbierta(false);
+    setTareaSeleccionada(null);
   };
 
   return (
@@ -102,7 +89,12 @@ function App() {
           onEliminarTarea={eliminarTarea}
           onAgregarTarea={agregarTareas}
         />
-       
+        <CardEditar abierta={abierta}
+          onCerrar={() => { setAbierta(false); setTareaSeleccionada(null); }}
+          tarea={tareaSeleccionada}
+          onGuardar={guardarCambios}
+        />
+
       </Box>
     </div>
   );
