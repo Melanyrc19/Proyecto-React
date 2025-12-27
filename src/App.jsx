@@ -2,7 +2,7 @@ import { Box, Heading, Text, Button, VStack } from "@chakra-ui/react";
 import { useState, useEffect } from "react";
 import { TodoList } from "./Components/TodoList";
 import { Filtro } from "./Components/Filtro";
-import { Form } from "./Components/Form";
+import {Formulario } from "./Components/Formulario";
 import { CardEditar } from "./Components/CardEditar";
 
 
@@ -11,7 +11,15 @@ function App() {
   const [filtro, setFiltro] = useState("Todas");
   const [abierta, setAbierta] = useState(false);
   const [tareaSeleccionada, setTareaSeleccionada] = useState(null);
+  
+  useEffect(() => {
+    const guardadas = JSON.parse(localStorage.getItem("tareas")) || [];
+    setTareas(guardadas);
+  }, []);
 
+   useEffect(() => {
+    localStorage.setItem("tareas", JSON.stringify(tareas));
+  }, [tareas]);
 
   const tareasFiltradas = tareas.filter((tarea) => {
     if (filtro === "completadas") {
@@ -73,7 +81,7 @@ function App() {
         </Heading>
 
         <Filtro filtro={filtro} setFiltro={setFiltro} />
-        <Form flex="1" onAgregarTarea={agregarTareas} />
+        <Formulario flex="1" onAgregarTarea={agregarTareas} />
       </Box>
       <Box
         w={["100%", "50%", "100%"]}

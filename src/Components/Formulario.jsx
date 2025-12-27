@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { Box, Input, Button, Text } from "@chakra-ui/react";
 
-export const Form = ({ onAgregarTarea }) => {
+export const Formulario = ({ onAgregarTarea }) => {
 
   const [tarea, setTarea] = useState("");
   const [error, setError] = useState("");
