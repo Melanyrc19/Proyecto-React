@@ -31,15 +31,14 @@ export const Formulario = ({ onAgregarTarea }) => {
       w="100%"        
       maxW="600px"  >
         <Box display="flex" gap={2}>
-      <Input
-        type="text" bg={"white"} color={"black"}
+      <Input fontSize={["md", "lg", "xl"]}  type="text" bg={"white"} color={"black"}
         placeholder="Ingrese nueva tarea"
         value={tarea}
         onChange={(e) => setTarea(e.target.value)}
      flex="1" 
      />
         
-      <Button minW="" flex={1} colorScheme="teal" type="submit">Agregar tarea</Button>
+      <Button minW="" flex={1} fontSize={["md", "lg", "xl"]}   colorScheme="teal" type="submit">Agregar tarea</Button>
          </Box>
       {error && <Text color="red.500" mb={2}>{error}</Text>}
     </Box>

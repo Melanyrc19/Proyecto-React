@@ -26,27 +26,32 @@ useEffect(() => {
   if (!abierta) return null;
   return (
     
-    <Box as="form"
-    onSubmit={guardarCambios}
-      position="fixed"
-      top="0"
-      right="0"
-      h="100vh"
-      w="400px"
-      bg="gray.100"
-      shadow="lg"
-      display="flex"
-      flexDirection="column"
-      justifyContent="space-between"
-    >
-      <Box>
-        <Text fontSize="xl" p={4}>
+    <Box
+  as="form"
+  onSubmit={guardarCambios}
+  position="fixed"
+  top="50%"
+  left="50%"
+  transform="translate(-50%, -50%)"
+  w={["90%", "70%", "400px"]}
+  bg="gray.100"
+  shadow="2xl"
+  borderRadius="xl"
+  display="flex"
+  flexDirection="column"
+  justifyContent="space-between"
+  p={[4,6,8]}
+>
+      <Box >
+        <Text fontSize={["md", "lg", "2xl"]} p={4}>
           Editar Tarea:
         </Text>
-        <Text fontSize="xl" p={4}>
+        <Text fontSize={["md", "md", "lg"]} p={4}>
           Ingrese nueva tarea:
         </Text>
          <Input
+         fontSize={["lg", "xl", "xl"]}
+          m={2}
           type="text"
           bg={"white"}
           color={"black"}
@@ -62,7 +67,7 @@ useEffect(() => {
       </Box>
 
       
-        <Box m={4} display="flex" gap={2}>
+        <Box mt={4} display="flex" gap={2}>
           <Button type="submit" colorScheme="teal" flex={1}>
             Guardar cambios
           </Button>
