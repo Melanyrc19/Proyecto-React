@@ -4,11 +4,15 @@ import { useEffect } from "react";
 export const CardEditar = (props) => {
   const { abierta, onCerrar, tarea, onGuardar } = props;
   const [texto, setTexto] = useState("");
+  const [error, setError] = useState("");
 
   const guardarCambios = (e) => {
     e.preventDefault();
     if (!abierta || !tarea) return null;
-    if (texto.trim() === "") return;
+    if (texto.trim() === "") {
+      setError("El texto no puede estar vacío.");
+      return;
+    }
     onGuardar(tarea.id, texto);
     onCerrar();
 
@@ -51,6 +55,7 @@ useEffect(() => {
           value={texto}
           onChange={(e) => setTexto(e.target.value)}
         />
+        {error && <Text color="red.500" mb={2}>{error}</Text>}
 
 
 

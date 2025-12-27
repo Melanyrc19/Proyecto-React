@@ -1,15 +1,19 @@
 import { Box, Heading, Text, Button, VStack } from "@chakra-ui/react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { TodoList } from "./Components/TodoList";
 import { Filtro } from "./Components/Filtro";
 import { Form } from "./Components/Form";
 import { CardEditar } from "./Components/CardEditar";
+
 
 function App() {
   const [tareas, setTareas] = useState([]);
   const [filtro, setFiltro] = useState("Todas");
   const [abierta, setAbierta] = useState(false);
   const [tareaSeleccionada, setTareaSeleccionada] = useState(null);
+  const [mensajeError, setMensajeError] = useState("");
+
+
 
   const tareasFiltradas = tareas.filter((tarea) => {
     if (filtro === "completadas") {
@@ -21,13 +25,20 @@ function App() {
     return true;
   });
 
-  const agregarTareas = (tarea) => {
+  const agregarTareas = (texto) => {
+    if (!texto.trim()) {
+      setMensajeError("El texto de la tarea no puede estar vacío.");
+      return;
+    }
+
+
     const nuevaTarea = {
       id: Date.now(),
-      texto: tarea,
+      texto: texto,
       completada: false,
     };
     setTareas([...tareas, nuevaTarea]);
+    setMensajeError("");
   };
 
   const toggleCompletada = (id) => {
