@@ -4,7 +4,7 @@ import { TodoList } from "./Components/TodoList";
 import { Filtro } from "./Components/Filtro";
 import {Formulario } from "./Components/Formulario";
 import { CardEditar } from "./Components/CardEditar";
-
+import { Footer } from "./Components/Footer";
 
 function App() {
   const [tareas, setTareas] = useState([]);
@@ -107,8 +107,11 @@ function App() {
           tarea={tareaSeleccionada}
           onGuardar={guardarCambios}
         />
+       
 
       </Box>
+      <Footer />
+
     </div>
   );
 }
