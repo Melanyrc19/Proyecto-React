@@ -29,6 +29,7 @@ Es parte del Trabajo Práctico Integrador del curso de Front End.
 
 ## 📋 Descripción
 
+
 Esta aplicación proporciona un sistema de gestión de tareas que permite:
 - Listar tareas almacenadas localmente en el navegador
 - Filtrar tareas por estado (completas / incompletas)
