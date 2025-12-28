@@ -1,4 +1,4 @@
-<img width="1858" height="875" alt="image" src="https://github.com/user-attachments/assets/acf886c3-fdef-4291-9f5d-feb1708a1a1d" /># React + Vite
+# React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
@@ -14,27 +14,30 @@ The React Compiler is not enabled on this template because of its impact on dev 
 ## Expanding the ESLint configuration
 
 If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-# Proyecto-React
 
 
+------------------------------------------------------------------------------------
 
 # TodoList
-Esta aplicación permite gestionar un listado de elementos utilizando MockAPI como backend. Es parte del Trabajo Práctico Integrador del curso Front End.
+Esta aplicación permite gestionar tareas de manera sencilla: crear, editar, marcar como completadas y eliminar.  
+Los datos se almacenan localmente en el navegador usando **LocalStorage**, en formato **JSON**.  
+Es parte del Trabajo Práctico Integrador del curso de Front End.
+
 
 ![Badge de Estado](https://img.shields.io/badge/estado-en%20desarrollo-yellow)
 ![Badge de Versión](https://img.shields.io/badge/versión-1.0.0-blue)
 
 ## 📋 Descripción
 
-Esta aplicación proporciona un sistema completo de gestión de elementos que permite:
-- Listar elementos desde una API
-- Filtrar por nombre, categoría y características
-- Agregar, editar y eliminar elementos
-- Visualizar detalles de cada elemento
+Esta aplicación proporciona un sistema de gestión de tareas que permite:
+- Listar tareas almacenadas localmente en el navegador
+- Filtrar tareas por estado (completas / incompletas)
+- Agregar, editar y eliminar tareas
+- Visualizar detalles de cada tarea
 
 ## 🛠️ Tecnologías Utilizadas
-- React.js
-- Chakra UI
+- **React.js** (para manejar el estado y la lógica de la aplicación con hooks como `useState` y `useEffect`)
+- **Chakra UI** (para el diseño y componentes de la interfaz de usuario)
 
 ## ✅ Características
 - **Gestión de Tareas**:
@@ -90,25 +93,31 @@ src/
 
 ### Página de Inicio
 
+<img width="1819" height="886" alt="image" src="https://github.com/user-attachments/assets/a12921a2-ef19-4d24-b057-0536d4779b85" />
+
+
+
+### Página de Inicio E-mobile
+<img width="559" height="595" alt="image" src="https://github.com/user-attachments/assets/7b3ca9d4-7fb8-459c-b0a8-97a291f8febf" />
+
+
+### Página de Inicio Tablet
+<img width="559" height="595" alt="image" src="https://github.com/user-attachments/assets/62b4b957-f085-4160-84a5-32e639be3406" />
+
+
+
+### Modal de edicion
+
+<img width="837" height="581" alt="image" src="https://github.com/user-attachments/assets/dd92a4e5-e9b8-4541-bea0-e0321ad8b5af" />
 
 
 
 
-### Pie de Página
+### Alerta para eliminar
+
+<img width="837" height="581" alt="image" src="https://github.com/user-attachments/assets/fe27abf8-5f74-4fc2-a7e9-8b59995b1b48" />
 
 
-### Filtro 
-
-
-
-### Formulario
-
-
-
-### Pagina de inicio Mobile
-
-
-### Pagina de inicio Table
 
 
 
@@ -133,10 +142,10 @@ Este proyecto está bajo la Licencia MIT - ver el archivo LICENSE para más deta
 
 ##  ✒️ Autor
 
-Melany Rodriguez- Trabajo Inicial - Tu Usuario de GitHub
+Melany Rodriguez- Trabajo Final - Melanyrc19
 ## 🎓 Agradecimientos
 
 -Gracias 
 ---
 
-⌨️ con ❤️ por Melany
+Hecho con ❤️ por Melany
