@@ -84,7 +84,7 @@ function App() {
       </Box>
       <Box
         w={["100%", "50%", "100%"]}
-        minH={"60vh"}
+        minH={["65vh", "60vh", "60vh"]}
         p={8}
         display="flex"
         flexDirection="column"

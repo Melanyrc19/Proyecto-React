@@ -93,6 +93,7 @@ export const TodoList = ({
         isOpen={tareaAEliminar !== null}
         leastDestructiveRef={cancelRef}
         onClose={cerrarAlerta}
+        isCentered
       >
         <AlertDialogOverlay>
           <AlertDialogContent>
