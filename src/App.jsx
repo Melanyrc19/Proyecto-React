@@ -2,8 +2,8 @@ import { Box, Heading, Text, Button, VStack } from "@chakra-ui/react";
 import { useState, useEffect } from "react";
 import { TodoList } from "./Components/TodoList";
 import { Filtro } from "./Components/Filtro";
-import {Formulario } from "./Components/Formulario";
-import { CardEditar } from "./Components/CardEditar";
+import { Formulario } from "./Components/Formulario";
+import { ModalEditar } from "./Components/ModalEditar";
 import { Footer } from "./Components/Footer";
 
 function App() {
@@ -11,13 +11,13 @@ function App() {
   const [filtro, setFiltro] = useState("Todas");
   const [abierta, setAbierta] = useState(false);
   const [tareaSeleccionada, setTareaSeleccionada] = useState(null);
-  
+
   useEffect(() => {
     const guardadas = JSON.parse(localStorage.getItem("tareas")) || [];
     setTareas(guardadas);
   }, []);
 
-   useEffect(() => {
+  useEffect(() => {
     localStorage.setItem("tareas", JSON.stringify(tareas));
   }, [tareas]);
 
@@ -32,7 +32,6 @@ function App() {
   });
 
   const agregarTareas = (texto) => {
-    
     if (!texto.trim()) return;
     const nuevaTarea = {
       id: Date.now(),
@@ -40,7 +39,6 @@ function App() {
       completada: false,
     };
     setTareas([...tareas, nuevaTarea]);
-   
   };
 
   const toggleCompletada = (id) => {
@@ -86,7 +84,7 @@ function App() {
       </Box>
       <Box
         w={["100%", "50%", "100%"]}
-        minH={"60vh"}
+          minH={["65vh", "60vh", "60vh"]}
         p={8}
         display="flex"
         flexDirection="column"
@@ -102,16 +100,17 @@ function App() {
           onEliminarTarea={eliminarTarea}
           onAgregarTarea={agregarTareas}
         />
-        <CardEditar abierta={abierta}
-          onCerrar={() => { setAbierta(false); setTareaSeleccionada(null); }}
+        <ModalEditar
+          abierta={abierta}
+          onCerrar={() => {
+            setAbierta(false);
+            setTareaSeleccionada(null);
+          }}
           tarea={tareaSeleccionada}
           onGuardar={guardarCambios}
         />
-       
-
       </Box>
       <Footer />
-
     </div>
   );
 }
