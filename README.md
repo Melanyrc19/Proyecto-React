@@ -70,7 +70,8 @@ cd Proyecto-React
 
 3.npm run dev
 
-Alternativamente, puedes ver la versión desplegada en: https://proyectoreact-jet.vercel.app
+Alternativamente, puedes ver la versión desplegada en: 
+https://proyecto-react-pfl4w56m4-melanys-projects-487a6897.vercel.app
 
 
 ## 📁 Estructura del proyecto
